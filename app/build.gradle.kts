@@ -63,4 +63,8 @@ dependencies {
     ksp("androidx.room3:room3-compiler:3.0.0-alpha02")
     implementation("androidx.navigation:navigation-compose:2.7.7")
 
+    testImplementation("junit:junit:4.13.2")
+    testImplementation("app.cash.turbine:turbine:0.12.1")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
+
 }
