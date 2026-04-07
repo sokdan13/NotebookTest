@@ -1,5 +1,9 @@
 package com.example.notebooktest.data.database
 
+import androidx.room3.Dao
+import androidx.room3.Insert
+import androidx.room3.Query
+
 @Dao
 interface TaskDao {
 
@@ -11,4 +15,7 @@ interface TaskDao {
 
     @Insert
     suspend fun insert(task: TaskEntity)
+
+    @Query("SELECT * FROM TaskEntity WHERE dateStart >= :start AND dateStart <= :end ORDER BY dateStart ASC")
+    suspend fun getTasksByDateRange(start: Long, end: Long): List<TaskEntity>
 }
